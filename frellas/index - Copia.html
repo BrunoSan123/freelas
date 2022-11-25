@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>A4 Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/froala_editor.css" />
+    <link rel="stylesheet" href="./css/froala_style.css" />
+    <link rel="stylesheet" href="css/plugins/code_view.css" />
+    <link rel="stylesheet" href="css/plugins/colors.css" />
+    <link rel="stylesheet" href="css/plugins/emoticons.css" />
+    <link rel="stylesheet" href="css/plugins/image_manager.css" />
+    <link rel="stylesheet" href="css/plugins/image.css" />
+    <link rel="stylesheet" href="css/plugins/line_breaker.css" />
+    <link rel="stylesheet" href="css/plugins/quick_insert.css" />
+    <link rel="stylesheet" href="css/plugins/table.css" />
+    <link rel="stylesheet" href="css/plugins/file.css" />
+    <link rel="stylesheet" href="css/plugins/char_counter.css" />
+    <link rel="stylesheet" href="css/plugins/video.css" />
+    <link rel="stylesheet" href="css/plugins/emoticons.css" />
+    <link rel="stylesheet" href="css/plugins/fullscreen.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <p><strong>Try adding elements to the page</strong></p>
+      <div>
+        <button onclick="onBtnAddElement('block')">Add block</button>
+        <button onclick="onBtnAddElement('text')">Add Text</button>
+        <button onclick="onBtnAddElement('form')">Add Form</button>
+        <button onclick="onBtnAddElement('table')">Add Table</button>
+        <button id="desfazer2">Desfazer</button>
+        <button id="refazer2">Refazer</button>
+        <button id="newPage">Adicionar Nova Página</button>
+        <button id="removePage">Remover página</button>
+      </div>
+    </header>
+    <br />
+
+    <div class="paginated-view">
+      <div class="containerPai">
+        <div id="edit" class="page A4">
+          <div class="text">
+            1Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
+            vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+            amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+            placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+            pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae,
+            ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+            condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+            dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent
+            dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+            vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
+            tincidunt quis, accumsan porttitor, facilisis luctus, metus
+          </div>
+        </div>
+
+        <div id="templates">
+          <div class="block">
+            <div class="block2"></div>
+          </div>
+
+          <div class="text">
+            1Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
+            vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+            amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+            placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+            pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae,
+            ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+            condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
+            dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent
+            dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+            vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
+            tincidunt quis, accumsan porttitor, facilisis luctus, metus
+          </div>
+
+          <div class="form">
+            <form>
+              <div>User name: <input name="name" /></div>
+              <br />
+              <div>Password: <input type="password" name="password" /></div>
+              <br />
+              <div><input type="submit" value="submit" /></div>
+            </form>
+          </div>
+
+          <div class="table">
+            <table>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+              <tr>
+                <td>ABC</td>
+                <td>abc</td>
+              </tr>
+              <tr>
+                <td>PQR</td>
+                <td>pqr</td>
+              </tr>
+              <tr>
+                <td>LMN</td>
+                <td>lmn</td>
+              </tr>
+              <tr>
+                <td>XYZ</td>
+                <td>xyz</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"
+    ></script>
+    <script type="text/javascript" src="js/froala_editor.min.js"></script>
+    <script type="text/javascript" src="js/plugins/align.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/code_beautifier.min.js"
+    ></script>
+    <script type="text/javascript" src="js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="js/plugins/colors.min.js"></script>
+    <script type="text/javascript" src="js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="js/plugins/draggable.min.js"></script>
+    <script type="text/javascript" src="js/plugins/font_size.min.js"></script>
+    <script type="text/javascript" src="js/plugins/font_family.min.js"></script>
+    <script type="text/javascript" src="js/plugins/image.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/image_manager.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/line_breaker.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/quick_insert.min.js"
+    ></script>
+    <script type="text/javascript" src="js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="js/plugins/lists.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/paragraph_format.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/paragraph_style.min.js"
+    ></script>
+    <script type="text/javascript" src="js/plugins/video.min.js"></script>
+    <script type="text/javascript" src="js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="js/plugins/file.min.js"></script>
+    <script type="text/javascript" src="js/plugins/entities.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/plugins/inline_style.min.js"
+    ></script>
+    <script type="text/javascript" src="js/plugins/save.min.js"></script>
+    <script type="text/javascript" src="js/plugins/fullscreen.min.js"></script>
+    <script type="text/javascript" src="js/languages/pt_br.js"></script>
+    <script type="text/javascript" src="js/plugins/char_counter.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      var container = document.querySelectorAll(".paginated-view");
+      const newPageButton = document.getElementById("newPage");
+      const removePage = document.getElementById("removePage");
+      var n = 0;
+
+      // primeira instancia do edit ,ela carrega no load com a primeira página
+      new FroalaEditor("#edit", {
+        language: "pt_br",
+        //fullPage: true,
+        enter: FroalaEditor.ENTER_P,
+        toolbarInline: true,
+        initOnClick: true,
+        fontFamilySelection: true,
+        toolbarButtons: [
+          [
+            "bold",
+            "italic",
+            "underline",
+            "strikeThrough",
+            "textColor",
+            "backgroundColor",
+            "emoticons",
+          ],
+          [
+            "paragraphFormat",
+            "align",
+            "formatOL",
+            "formatUL",
+            "indent",
+            "outdent",
+          ],
+          ["insertImage", "insertVideo", "undo", "redo"],
+        ],
+        toolbarButtonsXS: null,
+        toolbarButtonsSM: null,
+        toolbarButtonsMD: null,
+        charCounterMax: 2822,
+        events: {
+          initialized: function () {
+            var editor = this;
+            editor.events.bindClick(
+              editor.$("body"),
+              "#desfazer2",
+              function () {
+                editor.events.focus();
+                editor.commands.undo();
+                
+              }
+            );
+            editor.events.bindClick(editor.$("body"), "#refazer2", function () {
+              editor.events.focus();
+              editor.commands.redo();
+            });
+
+            //função recursiva
+          },
+        },
+      });
+
+      // função para o botçao de inserir página
+
+      function PageInsert(valor) {
+        console.log("ta indo");
+        var newPage = `<div id='edit-${valor}' class="page A4"></div></div>`;
+        const div = document.createElement("div");
+        div.classList.add("containerPai");
+        div.innerHTML += newPage;
+        container[container.length - 1].appendChild(div);
+        new FroalaEditor(`#edit-${valor}`, {
+          language: "pt_br",
+          enter: FroalaEditor.ENTER_P,
+          toolbarInline: true,
+          initOnClick: true,
+          fontFamilySelection: true,
+          toolbarButtons: [
+            [
+              "bold",
+              "italic",
+              "underline",
+              "strikeThrough",
+              "textColor",
+              "backgroundColor",
+              "emoticons",
+            ],
+            [
+              "paragraphFormat",
+              "align",
+              "formatOL",
+              "formatUL",
+              "indent",
+              "outdent",
+            ],
+            ["insertImage", "insertVideo", "undo", "redo"],
+          ],
+          toolbarButtonsXS: null,
+          toolbarButtonsSM: null,
+          toolbarButtonsMD: null,
+          charCounterMax: 2822,
+          events: {
+            initialized: function () {
+              var editor = this;
+              editor.events.bindClick(
+                editor.$("body"),
+                "#desfazer2",
+                function () {
+                  editor.events.focus();
+                  editor.commands.undo();
+                }
+              );
+              editor.events.bindClick(
+                editor.$("body"),
+                "#refazer2",
+                function () {
+                  editor.events.focus();
+                  console.log('aqui')
+                  editor.commands.redo();
+                }
+              );
+            },
+          },
+        });
+      }
+
+      // função recursiva de inserção
+      function AutoPage() {
+        const div = document.createElement("div");
+        div.classList.add("containerPai");
+        div.innerHTML += newPage;
+        container[container.length - 1].appendChild(div);
+        new FroalaEditor("#edit", {
+          language: "pt_br",
+          enter: FroalaEditor.ENTER_P,
+          toolbarInline: true,
+          initOnClick: true,
+          fontFamilySelection: true,
+          toolbarButtons: [
+            [
+              "bold",
+              "italic",
+              "underline",
+              "strikeThrough",
+              "textColor",
+              "backgroundColor",
+              "emoticons",
+            ],
+            [
+              "paragraphFormat",
+              "align",
+              "formatOL",
+              "formatUL",
+              "indent",
+              "outdent",
+            ],
+            ["insertImage", "insertVideo", "undo", "redo"],
+          ],
+          toolbarButtonsXS: null,
+          toolbarButtonsSM: null,
+          toolbarButtonsMD: null,
+          events: {
+            initialized: function () {
+              var editor = this;
+              editor.events.bindClick(
+                editor.$("body"),
+                "#desfazer",
+                function () {
+                  localStorage.setItem("data", editor.html.get(true));
+                  editor.html
+                    .blocks("childNodes")
+                    [editor.html.blocks("childNodes").length - 1].remove(this);
+                }
+              );
+              editor.events.bindClick(
+                editor.$("body"),
+                "#refazer",
+                function () {
+                  const data = localStorage.getItem("data");
+                  editor.html.set(data);
+                  localStorage.removeItem("data");
+                }
+              );
+            },
+          },
+        });
+      }
+
+      //função para se usada de forma recursiva
+
+      //   function callRecursive(){
+      //     const containerElement =document.querySelectorAll(".fr-wrapper")
+      //     container[container.length -1].addEventListener('keyup',()=>{
+      //         if(containerElement[containerElement.length - 1].clientHeight>=containerPai[containerPai.length -1].clientHeight){
+      //             AutoPage()
+
+      //         }else{
+      //           return false
+      //         }
+      //     })
+      //   }
+
+      newPageButton.addEventListener("click", () => {
+        PageInsert(n++);
+      });
+
+      removePage.addEventListener("click", () => {
+        var containerPai = document.querySelectorAll(".containerPai");
+        containerPai[containerPai.length - 1].remove(this);
+      });
+    </script>
+  </body>
+</html>
